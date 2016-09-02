@@ -1,23 +1,45 @@
-input_string = raw_input("Enter the string of characters.")
-input_string = list(input_string)
-copy_string = input_string
-a=0
-for i in xrange(0, len(input_string)):
-	if input_string[i]=="F":
-		input_string.pop(i)
-		for j in xrange(i-1, 0, -1):
-			if input_string[j]=="E":
-				input_string.pop(j)
-				for k in xrange(j-1, 0, -1):
-					if input_string[k]=="H":
-						input_string.pop(k)
-						for l in xrange(k-1,0,-1):
-							if input_string[l]=="C":
-								input_string.pop(l)
-								a+=1
+input_string = raw_input()
+c = 0
+ch = 0
+che = 0
+chef = 0
+for i in xrange(len(input_string)):
+	if(input_string[i]=="C"):
+		c+=1
+	elif(input_string[i]=="H"):
+		if(c>0):
+			c=c-1
+			ch+=1
+	elif(input_string[i]=="E"):
+		if(ch>0):
+			ch=ch-1
+			che+=1
+	elif(input_string[i]=="F"):
+		if(che>0):
+			che=che-1
+			chef+=1
+print chef
 
-print a
-
-
+# string=raw_input()
+# c=0
+# ch=0
+# che=0
+# chef=0
+# for i in xrange(len(string)):
+#     if(string[i]=='C'):
+#         c=c+1
+#     elif(string[i]=='H'):
+#         if(c>0):
+#             c=c-1
+#             ch=ch+1
+#     elif(string[i]=='E'):
+#         if(ch>0):
+#             ch=ch-1
+#             che=che+1
+#     elif(string[i]=='F'):
+#         if(che>0):
+#             che=che-1
+#             chef=chef+1
+# print chef
 
 
